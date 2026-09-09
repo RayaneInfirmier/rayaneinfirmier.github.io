@@ -3,35 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rayane Infirmier à Domicile</title>
+
+    <title>Rayane Infirmier | Soins à domicile</title>
+
+    <meta name="description" content="Rayane Infirmier propose des soins infirmiers à domicile à Casablanca et Mohammedia. Services à partir de 40 DH.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f9fc;
+            color: #17324d;
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #087ea4;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #17324d;
+            margin-left: 25px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #087ea4;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #e8f7fb, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #087ea4;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #17324d;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #526b7a;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #087ea4;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: #065d79;
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #087ea4;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #637785;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 10px;
+            color: #17324d;
+        }
+
+        .service-card p {
+            color: #637785;
+        }
+
+        .price {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #087ea4;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #526b7a;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .feature strong {
+            display: block;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .area {
+            text-align: center;
+        }
+
+        .area-box {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            font-size: 20px;
+        }
+
+        .contact {
+            background: #e8f7fb;
+            text-align: center;
+        }
+
+        .contact p {
+            margin-bottom: 25px;
+            color: #526b7a;
+        }
+
+        footer {
+            background: #17324d;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .languages {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #637785;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            section {
+                padding: 50px 5%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Rayane Infirmier à Domicile</h1>
+<header>
+    <div class="logo">Rayane Infirmier</div>
 
-    <h2>Des soins infirmiers directement chez vous</h2>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <p>
-        Des soins infirmiers professionnels et personnalisés
-        directement à votre domicile.
+
+<section class="hero" id="accueil">
+
+    <div class="hero-content">
+
+        <h1>Rayane Infirmier</h1>
+
+        <h2>Des soins infirmiers directement chez vous</h2>
+
+        <p>
+            Des soins infirmiers à domicile avec professionnalisme,
+            respect et attention, à Casablanca et Mohammedia.
+        </p>
+
+        <a href="#contact" class="button">
+            Prendre rendez-vous
+        </a>
+
+        <div class="languages">
+            Français · العربية · English
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>Nos services</h2>
+
+        <p>
+            Des soins adaptés à vos besoins, directement à domicile.
+        </p>
+
+    </div>
+
+
+    <div class="services">
+
+        <div class="service-card">
+            <div class="service-icon">💉</div>
+            <h3>Injections</h3>
+            <p>Soins et injections selon prescription médicale.</p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="service-icon">🩹</div>
+            <h3>Pansements</h3>
+            <p>Soins des plaies et renouvellement des pansements.</p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="service-icon">🏥</div>
+            <h3>Soins post-opératoires</h3>
+            <p>Accompagnement et soins après une intervention.</p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="service-icon">🩺</div>
+            <h3>Surveillance</h3>
+            <p>Surveillance des constantes et accompagnement du patient.</p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="service-icon">👴</div>
+            <h3>Soins aux personnes âgées</h3>
+            <p>Accompagnement et soins à domicile adaptés.</p>
+        </div>
+
+
+        <div class="service-card">
+            <div class="service-icon">🛏️</div>
+            <h3>Soins à domicile</h3>
+            <p>Prise en charge personnalisée selon les besoins du patient.</p>
+        </div>
+
+    </div>
+
+
+    <div class="price">
+        Services à partir de 40 DH
+    </div>
+
+</section>
+
+
+<section class="about" id="apropos">
+
+    <div class="section-title">
+
+        <h2>À propos</h2>
+
+    </div>
+
+    <div class="about-content">
+
+        <p>
+            Rayane Infirmier propose des soins infirmiers à domicile
+            à Casablanca et Mohammedia, avec une approche professionnelle,
+            humaine et respectueuse de chaque patient.
+        </p>
+
+
+        <div class="features">
+
+            <div class="feature">
+                🏠
+                <strong>Soins à domicile</strong>
+                <span>Vous recevez vos soins directement chez vous.</span>
+            </div>
+
+
+            <div class="feature">
+                ❤️
+                <strong>Approche humaine</strong>
+                <span>Une attention particulière portée à chaque patient.</span>
+            </div>
+
+
+            <div class="feature">
+                🩺
+                <strong>Professionnalisme</strong>
+                <span>Des soins réalisés avec sérieux et respect.</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="area">
+
+    <div class="section-title">
+
+        <h2>Zone d'intervention</h2>
+
+        <p>Nous nous déplaçons à domicile dans les zones suivantes :</p>
+
+    </div>
+
+
+    <div class="area-box">
+
+        📍 <strong>Casablanca</strong>
+        <br><br>
+        📍 <strong>Mohammedia</strong>
+
+    </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact</h2>
+
+        <p>
+            Pour toute demande d'information ou pour prendre rendez-vous,
+            contactez-nous.
+        </p>
+
+    </div>
+
+
+    <a href="#" class="button">
+        Prendre rendez-vous
+    </a>
+
+    <p style="margin-top:20px;">
+        Numéro de téléphone à venir
     </p>
 
-    <h2>Nos soins</h2>
+</section>
 
-    <ul>
-        <li>Injections</li>
-        <li>Pansements</li>
-        <li>Soins post-opératoires</li>
-        <li>Surveillance des constantes</li>
-        <li>Soins à domicile</li>
-    </ul>
 
-    <h2>Contact</h2>
+<footer>
 
-    <p>Pour prendre rendez-vous, contactez-nous.</p>
+    <p>
+        © 2026 Rayane Infirmier — Soins infirmiers à domicile
+    </p>
 
-    <button>Prendre rendez-vous</button>
+    <p style="margin-top:8px; font-size:14px;">
+        Casablanca · Mohammedia
+    </p>
+
+</footer>
 
 </body>
 </html>
