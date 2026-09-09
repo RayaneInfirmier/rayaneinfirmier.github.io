@@ -1,467 +1,979 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rayane Infirmier - Soins infirmiers à domicile à Casablanca et Mohammedia, disponible 24h/24 et 7j/7.">
+<title>Rayane Infirmier | Soins à domicile</title>
 
-    <title>Rayane Infirmier | Soins à domicile</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:#17324d;
+  background:#f7fbfd;
+  line-height:1.6;
+}
+a{text-decoration:none;color:inherit}
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#ffffff;
+  box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+.navbar{
+  max-width:1150px;
+  margin:auto;
+  padding:18px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{
+  font-size:25px;
+  font-weight:800;
+  color:#087f8c;
+}
+nav{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+nav a{
+  font-weight:600;
+  color:#345;
+}
+nav a:hover{color:#087f8c}
 
-    <meta name="description" content="Rayane Infirmier propose des soins infirmiers à domicile à Casablanca et Mohammedia. Services à partir de 40 DH.">
+.languages{
+  display:flex;
+  gap:5px;
+}
+.lang-btn{
+  border:1px solid #d4e5e8;
+  background:#fff;
+  color:#17324d;
+  padding:7px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.lang-btn.active,
+.lang-btn:hover{
+  background:#087f8c;
+  color:#fff;
+}
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+.hero{
+  background:linear-gradient(135deg,#e8f8fa,#f7fbfd);
+  padding:90px 22px;
+}
+.hero-inner{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:50px;
+  align-items:center;
+}
+.badge{
+  display:inline-block;
+  background:#d8f2f3;
+  color:#087f8c;
+  padding:8px 14px;
+  border-radius:30px;
+  font-weight:bold;
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:50px;
+  line-height:1.1;
+  margin-bottom:20px;
+}
+.hero p{
+  font-size:19px;
+  color:#506579;
+  max-width:650px;
+}
+.buttons{
+  display:flex;
+  gap:14px;
+  margin-top:28px;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-block;
+  padding:14px 23px;
+  border-radius:10px;
+  font-weight:700;
+  transition:.2s;
+}
+.btn-primary{
+  background:#087f8c;
+  color:#fff;
+}
+.btn-primary:hover{background:#066b76;transform:translateY(-2px)}
+.btn-secondary{
+  background:#fff;
+  color:#087f8c;
+  border:2px solid #087f8c;
+}
+.btn-secondary:hover{background:#e8f8fa}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f9fc;
-            color: #17324d;
-            line-height: 1.6;
-        }
+.hero-image{
+  width:100%;
+  height:390px;
+  object-fit:cover;
+  border-radius:25px;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
 
-        header {
-            background: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+.availability{
+  margin-top:25px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  color:#087f8c;
+  font-size:18px;
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #087ea4;
-        }
+section{
+  max-width:1150px;
+  margin:auto;
+  padding:80px 22px;
+}
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+.section-title h2{
+  font-size:36px;
+  margin-bottom:10px;
+}
+.section-title p{
+  color:#64788a;
+  max-width:700px;
+  margin:auto;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #17324d;
-            margin-left: 25px;
-            font-weight: bold;
-        }
+.services{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+.card{
+  background:#fff;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 6px 25px rgba(0,0,0,.07);
+  transition:.25s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(0,0,0,.11);
+}
+.card img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+}
+.card-content{
+  padding:23px;
+}
+.card h3{
+  font-size:22px;
+  margin-bottom:9px;
+}
+.card p{
+  color:#657789;
+  margin-bottom:18px;
+}
+.more{
+  border:0;
+  background:#e8f8fa;
+  color:#087f8c;
+  padding:10px 15px;
+  border-radius:9px;
+  font-weight:700;
+  cursor:pointer;
+}
+.more:hover{
+  background:#087f8c;
+  color:#fff;
+}
 
-        nav a:hover {
-            color: #087ea4;
-        }
+.price-box{
+  margin:50px auto 0;
+  max-width:600px;
+  background:#e8f8fa;
+  border:1px solid #c9eaed;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+}
+.price-box strong{
+  font-size:28px;
+  color:#087f8c;
+}
 
-        .hero {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #e8f7fb, #ffffff);
-        }
+.about{
+  background:#fff;
+  max-width:none;
+}
+.about-inner{
+  max-width:1150px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+.about-image{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  border-radius:22px;
+}
+.about h2{
+  font-size:36px;
+  margin-bottom:20px;
+}
+.about p{
+  color:#607486;
+  margin-bottom:15px;
+}
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:25px;
+}
+.feature{
+  background:#f3fafb;
+  padding:18px;
+  border-radius:13px;
+  text-align:center;
+  font-weight:bold;
+}
 
-        .hero-content {
-            max-width: 800px;
-        }
+.area{
+  text-align:center;
+}
+.area-box{
+  background:#fff;
+  border-radius:20px;
+  padding:35px;
+  box-shadow:0 6px 25px rgba(0,0,0,.06);
+}
+.area-box h3{
+  font-size:28px;
+  color:#087f8c;
+  margin-bottom:10px;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-            color: #087ea4;
-        }
+.contact{
+  background:linear-gradient(135deg,#087f8c,#0a6975);
+  color:#fff;
+  max-width:none;
+}
+.contact-inner{
+  max-width:850px;
+  margin:auto;
+  text-align:center;
+  padding:20px;
+}
+.contact h2{
+  font-size:38px;
+  margin-bottom:15px;
+}
+.contact p{
+  font-size:18px;
+  margin-bottom:25px;
+}
+.contact .btn-secondary{
+  background:#fff;
+  border-color:#fff;
+}
 
-        .hero h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #17324d;
-        }
+footer{
+  background:#123047;
+  color:#dce7ed;
+  text-align:center;
+  padding:30px 20px;
+}
+footer strong{color:#fff}
 
-        .hero p {
-            font-size: 18px;
-            color: #526b7a;
-            margin-bottom: 30px;
-        }
+/* Modal */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  z-index:2000;
+  padding:25px;
+  overflow:auto;
+}
+.modal.show{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.modal-box{
+  background:#fff;
+  max-width:750px;
+  width:100%;
+  border-radius:20px;
+  padding:32px;
+  position:relative;
+  max-height:90vh;
+  overflow:auto;
+}
+.close{
+  position:absolute;
+  right:20px;
+  top:15px;
+  border:0;
+  background:#eef5f6;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:22px;
+}
+.modal-box h2{
+  color:#087f8c;
+  margin-bottom:15px;
+}
+.modal-box h3{
+  margin-top:22px;
+  margin-bottom:7px;
+}
+.modal-box p,.modal-box li{
+  color:#596f81;
+}
+.modal-box ul{
+  padding-left:22px;
+}
 
-        .button {
-            display: inline-block;
-            padding: 14px 28px;
-            background: #087ea4;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: #065d79;
-            transform: translateY(-2px);
-        }
-
-        section {
-            padding: 70px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            color: #087ea4;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #637785;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background: white;
-            padding: 30px 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            transition: 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 10px;
-            color: #17324d;
-        }
-
-        .service-card p {
-            color: #637785;
-        }
-
-        .price {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 22px;
-            font-weight: bold;
-            color: #087ea4;
-        }
-
-        .about {
-            background: white;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-            font-size: 18px;
-            color: #526b7a;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .feature {
-            text-align: center;
-            padding: 25px;
-        }
-
-        .feature strong {
-            display: block;
-            margin-top: 10px;
-            font-size: 18px;
-        }
-
-        .area {
-            text-align: center;
-        }
-
-        .area-box {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 35px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-            font-size: 20px;
-        }
-
-        .contact {
-            background: #e8f7fb;
-            text-align: center;
-        }
-
-        .contact p {
-            margin-bottom: 25px;
-            color: #526b7a;
-        }
-
-        footer {
-            background: #17324d;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        .languages {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #637785;
-        }
-
-        @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav a {
-                margin: 0 7px;
-                font-size: 14px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero h2 {
-                font-size: 22px;
-            }
-
-            section {
-                padding: 50px 5%;
-            }
-        }
-    </style>
+/* Mobile */
+@media(max-width:850px){
+  nav{display:none}
+  .hero-inner,
+  .about-inner{
+    grid-template-columns:1fr;
+  }
+  .hero h1{font-size:39px}
+  .services{
+    grid-template-columns:1fr 1fr;
+  }
+  .features{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:560px){
+  .navbar{padding:15px}
+  .languages{gap:3px}
+  .lang-btn{padding:6px 7px;font-size:12px}
+  .hero{padding:60px 18px}
+  .hero h1{font-size:34px}
+  .hero-image{height:280px}
+  section{padding:60px 18px}
+  .section-title h2{font-size:30px}
+  .services{grid-template-columns:1fr}
+  .card img{height:220px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo">Rayane Infirmier</div>
+  <div class="navbar">
+    <a href="#home" class="logo">Rayane Infirmier</a>
 
     <nav>
-        <a href="#accueil">Accueil</a>
-        <a href="#services">Services</a>
-        <a href="#apropos">À propos</a>
-        <a href="#contact">Contact</a>
+      <a href="#home" data-i18n="navHome">Accueil</a>
+      <a href="#services" data-i18n="navServices">Services</a>
+      <a href="#about" data-i18n="navAbout">À propos</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
     </nav>
+
+    <div class="languages">
+      <button class="lang-btn active" onclick="changeLanguage('fr')">FR</button>
+      <button class="lang-btn" onclick="changeLanguage('en')">EN</button>
+      <button class="lang-btn" onclick="changeLanguage('ar')">العربية</button>
+      <button class="lang-btn" onclick="changeLanguage('es')">ES</button>
+    </div>
+  </div>
 </header>
 
+<main>
 
-<section class="hero" id="accueil">
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div>
+      <span class="badge" data-i18n="badge">Soins infirmiers à domicile</span>
 
-    <div class="hero-content">
+      <h1 data-i18n="heroTitle">
+        Des soins infirmiers directement chez vous
+      </h1>
 
-        <h1>Rayane Infirmier</h1>
+      <p data-i18n="heroText">
+        Des soins professionnels, humains et attentifs à Casablanca et Mohammedia.
+      </p>
 
-        <h2>Des soins infirmiers directement chez vous</h2>
+      <div class="availability">
+        🕐 <span data-i18n="available">Disponible 24h/24 · 7j/7</span>
+      </div>
 
-        <p>
-            Des soins infirmiers à domicile avec professionnalisme,
-            respect et attention, à Casablanca et Mohammedia.
-        </p>
-
-        <a href="#contact" class="button">
-            Prendre rendez-vous
+      <div class="buttons">
+        <a href="#services" class="btn btn-primary" data-i18n="discover">
+          Découvrir les services
         </a>
-
-        <div class="languages">
-            Français · العربية · English
-        </div>
-
+        <a href="#contact" class="btn btn-secondary" data-i18n="appointment">
+          Prendre rendez-vous
+        </a>
+      </div>
     </div>
 
+    <img
+      class="hero-image"
+      src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1000&q=80"
+      alt="Soins infirmiers à domicile">
+  </div>
 </section>
-
 
 <section id="services">
 
-    <div class="section-title">
+  <div class="section-title">
+    <h2 data-i18n="servicesTitle">Nos services</h2>
+    <p data-i18n="servicesIntro">
+      Des soins infirmiers à domicile adaptés à vos besoins.
+    </p>
+  </div>
 
-        <h2>Nos services</h2>
+  <div class="services">
 
-        <p>
-            Des soins adaptés à vos besoins, directement à domicile.
-        </p>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=800&q=80" alt="Injection">
+      <div class="card-content">
+        <h3 data-i18n="injectionTitle">Injections</h3>
+        <p data-i18n="injectionShort">Administration de traitements prescrits à domicile.</p>
+        <button class="more" onclick="openService('injection')" data-i18n="more">En savoir plus</button>
+      </div>
+    </article>
 
-    </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=800&q=80" alt="Perfusion">
+      <div class="card-content">
+        <h3 data-i18n="perfusionTitle">Perfusions</h3>
+        <p data-i18n="perfusionShort">Perfusions et traitements selon prescription médicale.</p>
+        <button class="more" onclick="openService('perfusion')" data-i18n="more">En savoir plus</button>
+      </div>
+    </article>
 
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=800&q=80" alt="Pansement">
+      <div class="card-content">
+        <h3 data-i18n="woundTitle">Pansements</h3>
+        <p data-i18n="woundShort">Soins des plaies et renouvellement des pansements.</p>
+        <button class="more" onclick="openService('wound')" data-i18n="more">En savoir plus</button>
+      </div>
+    </article>
 
-    <div class="services">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=800&q=80" alt="Prélèvement">
+      <div class="card-content">
+        <h3 data-i18n="sampleTitle">Prélèvements</h3>
+        <p data-i18n="sampleShort">Prélèvements biologiques réalisés à domicile.</p>
+        <button class="more" onclick="openService('sample')" data-i18n="more">En savoir plus</button>
+      </div>
+    </article>
 
-        <div class="service-card">
-            <div class="service-icon">💉</div>
-            <h3>Injections</h3>
-            <p>Soins et injections selon prescription médicale.</p>
-        </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Soins post-opératoires">
+      <div class="card-content">
+        <h3 data-i18n="postopTitle">Soins post-opératoires</h3>
+        <p data-i18n="postopShort">Accompagnement et surveillance après une intervention.</p>
+        <button class="more" onclick="openService('postop')" data-i18n="more">En savoir plus</button>
+      </div>
+    </article>
 
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Hygiène et confort">
+      <div class="card-content">
+        <h3 data-i18n="hygieneTitle">Hygiène & confort</h3>
+        <p data-i18n="hygieneShort">Soins d'hygiène et aide au confort à domicile.</p>
+        <button class="more" onclick="openService('hygiene')" data-i18n="more">En savoir plus</button>
+      </div>
+    </article>
 
-        <div class="service-card">
-            <div class="service-icon">🩹</div>
-            <h3>Pansements</h3>
-            <p>Soins des plaies et renouvellement des pansements.</p>
-        </div>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" alt="Surveillance">
+      <div class="card-content">
+        <h3 data-i18n="monitorTitle">Surveillance</h3>
+        <p data-i18n="monitorShort">Surveillance des paramètres et accompagnement infirmier.</p>
+        <button class="more" onclick="openService('monitor')" data-i18n="more">En savoir plus</button>
+      </div>
+    </article>
 
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=800&q=80" alt="Personnes âgées">
+      <div class="card-content">
+        <h3 data-i18n="elderlyTitle">Personnes âgées</h3>
+        <p data-i18n="elderlyShort">Soins et accompagnement des personnes âgées ou dépendantes.</p>
+        <button class="more" onclick="openService('elderly')" data-i18n="more">En savoir plus</button>
+      </div>
+    </article>
 
-        <div class="service-card">
-            <div class="service-icon">🏥</div>
-            <h3>Soins post-opératoires</h3>
-            <p>Accompagnement et soins après une intervention.</p>
-        </div>
+  </div>
 
-
-        <div class="service-card">
-            <div class="service-icon">🩺</div>
-            <h3>Surveillance</h3>
-            <p>Surveillance des constantes et accompagnement du patient.</p>
-        </div>
-
-
-        <div class="service-card">
-            <div class="service-icon">👴</div>
-            <h3>Soins aux personnes âgées</h3>
-            <p>Accompagnement et soins à domicile adaptés.</p>
-        </div>
-
-
-        <div class="service-card">
-            <div class="service-icon">🛏️</div>
-            <h3>Soins à domicile</h3>
-            <p>Prise en charge personnalisée selon les besoins du patient.</p>
-        </div>
-
-    </div>
-
-
-    <div class="price">
-        Services à partir de 40 DH
-    </div>
-
-</section>
-
-
-<section class="about" id="apropos">
-
-    <div class="section-title">
-
-        <h2>À propos</h2>
-
-    </div>
-
-    <div class="about-content">
-
-        <p>
-            Rayane Infirmier propose des soins infirmiers à domicile
-            à Casablanca et Mohammedia, avec une approche professionnelle,
-            humaine et respectueuse de chaque patient.
-        </p>
-
-
-        <div class="features">
-
-            <div class="feature">
-                🏠
-                <strong>Soins à domicile</strong>
-                <span>Vous recevez vos soins directement chez vous.</span>
-            </div>
-
-
-            <div class="feature">
-                ❤️
-                <strong>Approche humaine</strong>
-                <span>Une attention particulière portée à chaque patient.</span>
-            </div>
-
-
-            <div class="feature">
-                🩺
-                <strong>Professionnalisme</strong>
-                <span>Des soins réalisés avec sérieux et respect.</span>
-            </div>
-
-        </div>
-
-    </div>
+  <div class="price-box">
+    <div data-i18n="priceText">Services à partir de</div>
+    <strong>40 DH</strong>
+  </div>
 
 </section>
 
+<section class="about" id="about">
+  <div class="about-inner">
+
+    <img
+      class="about-image"
+      src="https://images.unsplash.com/photo-1580281657527-47f249e8f0df?auto=format&fit=crop&w=1000&q=80"
+      alt="Professionnel de santé">
+
+    <div>
+      <h2 data-i18n="aboutTitle">À propos de Rayane Infirmier</h2>
+
+      <p data-i18n="aboutText1">
+        Des soins infirmiers à domicile avec professionnalisme, respect et attention.
+      </p>
+
+      <p data-i18n="aboutText2">
+        Notre objectif est de vous permettre de recevoir des soins de qualité dans le confort de votre domicile.
+      </p>
+
+      <div class="features">
+        <div class="feature" data-i18n="feature1">🏠 À domicile</div>
+        <div class="feature" data-i18n="feature2">❤️ Approche humaine</div>
+        <div class="feature" data-i18n="feature3">✓ Professionnalisme</div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <section class="area">
+  <div class="section-title">
+    <h2 data-i18n="areaTitle">Zone d'intervention</h2>
+    <p data-i18n="areaText">Interventions à domicile à Casablanca et Mohammedia.</p>
+  </div>
 
-    <div class="section-title">
-
-        <h2>Zone d'intervention</h2>
-
-        <p>Nous nous déplaçons à domicile dans les zones suivantes :</p>
-
-    </div>
-
-
-    <div class="area-box">
-
-        📍 <strong>Casablanca</strong>
-        <br><br>
-        📍 <strong>Mohammedia</strong>
-
-    </div>
-
+  <div class="area-box">
+    <h3>Casablanca · Mohammedia</h3>
+    <p data-i18n="areaDetail">
+      Contactez-nous pour vérifier la disponibilité dans votre secteur.
+    </p>
+  </div>
 </section>
-
 
 <section class="contact" id="contact">
+  <div class="contact-inner">
+    <h2 data-i18n="contactTitle">Besoin de soins à domicile ?</h2>
 
-    <div class="section-title">
+    <p data-i18n="contactText">
+      Disponible 24h/24 et 7j/7 pour vos besoins en soins infirmiers.
+    </p>
 
-        <h2>Contact</h2>
-
-        <p>
-            Pour toute demande d'information ou pour prendre rendez-vous,
-            contactez-nous.
-        </p>
-
+    <div class="buttons" style="justify-content:center">
+      <a href="#home" class="btn btn-secondary" data-i18n="contactButton">
+        Nous contacter
+      </a>
     </div>
 
-
-    <a href="#" class="button">
-        Prendre rendez-vous
-    </a>
-
-    <p style="margin-top:20px;">
-        Numéro de téléphone à venir
+    <p style="margin-top:20px;opacity:.8" data-i18n="phoneComing">
+      Numéro de téléphone et WhatsApp à venir.
     </p>
-
+  </div>
 </section>
 
+</main>
 
 <footer>
-
-    <p>
-        © 2026 Rayane Infirmier — Soins infirmiers à domicile
-    </p>
-
-    <p style="margin-top:8px; font-size:14px;">
-        Casablanca · Mohammedia
-    </p>
-
+  <p>
+    © 2026 <strong>Rayane Infirmier</strong> —
+    <span data-i18n="footer">Soins infirmiers à domicile · Casablanca · Mohammedia</span>
+  </p>
 </footer>
+
+
+<!-- SERVICE MODAL -->
+
+<div class="modal" id="serviceModal" onclick="closeOutside(event)">
+  <div class="modal-box">
+
+    <button class="close" onclick="closeService()">×</button>
+
+    <h2 id="modalTitle"></h2>
+    <div id="modalContent"></div>
+
+  </div>
+</div>
+
+
+<script>
+
+const translations = {
+
+fr:{
+navHome:"Accueil",
+navServices:"Services",
+navAbout:"À propos",
+navContact:"Contact",
+badge:"Soins infirmiers à domicile",
+heroTitle:"Des soins infirmiers directement chez vous",
+heroText:"Des soins professionnels, humains et attentifs à Casablanca et Mohammedia.",
+available:"Disponible 24h/24 · 7j/7",
+discover:"Découvrir les services",
+appointment:"Prendre rendez-vous",
+servicesTitle:"Nos services",
+servicesIntro:"Des soins infirmiers à domicile adaptés à vos besoins.",
+injectionTitle:"Injections",
+injectionShort:"Administration de traitements prescrits à domicile.",
+perfusionTitle:"Perfusions",
+perfusionShort:"Perfusions et traitements selon prescription médicale.",
+woundTitle:"Pansements",
+woundShort:"Soins des plaies et renouvellement des pansements.",
+sampleTitle:"Prélèvements",
+sampleShort:"Prélèvements biologiques réalisés à domicile.",
+postopTitle:"Soins post-opératoires",
+postopShort:"Accompagnement et surveillance après une intervention.",
+hygieneTitle:"Hygiène & confort",
+hygieneShort:"Soins d'hygiène et aide au confort à domicile.",
+monitorTitle:"Surveillance",
+monitorShort:"Surveillance des paramètres et accompagnement infirmier.",
+elderlyTitle:"Personnes âgées",
+elderlyShort:"Soins et accompagnement des personnes âgées ou dépendantes.",
+more:"En savoir plus",
+priceText:"Services à partir de",
+aboutTitle:"À propos de Rayane Infirmier",
+aboutText1:"Des soins infirmiers à domicile avec professionnalisme, respect et attention.",
+aboutText2:"Notre objectif est de vous permettre de recevoir des soins de qualité dans le confort de votre domicile.",
+feature1:"🏠 À domicile",
+feature2:"❤️ Approche humaine",
+feature3:"✓ Professionnalisme",
+areaTitle:"Zone d'intervention",
+areaText:"Interventions à domicile à Casablanca et Mohammedia.",
+areaDetail:"Contactez-nous pour vérifier la disponibilité dans votre secteur.",
+contactTitle:"Besoin de soins à domicile ?",
+contactText:"Disponible 24h/24 et 7j/7 pour vos besoins en soins infirmiers.",
+contactButton:"Nous contacter",
+phoneComing:"Numéro de téléphone et WhatsApp à venir.",
+footer:"Soins infirmiers à domicile · Casablanca · Mohammedia"
+},
+
+en:{
+navHome:"Home",
+navServices:"Services",
+navAbout:"About",
+navContact:"Contact",
+badge:"Home nursing care",
+heroTitle:"Professional nursing care at your home",
+heroText:"Professional, compassionate and attentive nursing care in Casablanca and Mohammedia.",
+available:"Available 24/7",
+discover:"Discover our services",
+appointment:"Book an appointment",
+servicesTitle:"Our services",
+servicesIntro:"Home nursing care adapted to your needs.",
+injectionTitle:"Injections",
+injectionShort:"Administration of prescribed treatments at home.",
+perfusionTitle:"IV infusions",
+perfusionShort:"Infusions and treatments according to medical prescription.",
+woundTitle:"Wound care",
+woundShort:"Wound care and dressing changes.",
+sampleTitle:"Medical sampling",
+sampleShort:"Biological samples collected at home.",
+postopTitle:"Post-operative care",
+postopShort:"Support and monitoring after surgery.",
+hygieneTitle:"Hygiene & comfort",
+hygieneShort:"Hygiene care and comfort assistance at home.",
+monitorTitle:"Monitoring",
+monitorShort:"Monitoring of vital parameters and nursing support.",
+elderlyTitle:"Elderly care",
+elderlyShort:"Care and support for elderly or dependent patients.",
+more:"Learn more",
+priceText:"Services starting from",
+aboutTitle:"About Rayane Infirmier",
+aboutText1:"Home nursing care provided with professionalism, respect and compassion.",
+aboutText2:"Our goal is to help you receive quality nursing care in the comfort of your own home.",
+feature1:"🏠 At home",
+feature2:"❤️ Human approach",
+feature3:"✓ Professionalism",
+areaTitle:"Service area",
+areaText:"Home visits in Casablanca and Mohammedia.",
+areaDetail:"Contact us to check availability in your area.",
+contactTitle:"Need home nursing care?",
+contactText:"Available 24/7 for your nursing care needs.",
+contactButton:"Contact us",
+phoneComing:"Phone number and WhatsApp coming soon.",
+footer:"Home nursing care · Casablanca · Mohammedia"
+},
+
+ar:{
+navHome:"الرئيسية",
+navServices:"الخدمات",
+navAbout:"من نحن",
+navContact:"اتصل بنا",
+badge:"رعاية تمريضية منزلية",
+heroTitle:"رعاية تمريضية احترافية في منزلك",
+heroText:"رعاية تمريضية مهنية وإنسانية باهتمام واحترام في الدار البيضاء والمحمدية.",
+available:"متوفر 24 ساعة / 24 · 7 أيام / 7",
+discover:"اكتشف الخدمات",
+appointment:"احجز موعدًا",
+servicesTitle:"خدماتنا",
+servicesIntro:"رعاية تمريضية منزلية تتناسب مع احتياجاتكم.",
+injectionTitle:"الحقن",
+injectionShort:"إعطاء العلاجات الموصوفة في المنزل.",
+perfusionTitle:"التسريب الوريدي",
+perfusionShort:"التسريبات والعلاجات حسب الوصفة الطبية.",
+woundTitle:"تضميد الجروح",
+woundShort:"العناية بالجروح وتغيير الضمادات.",
+sampleTitle:"أخذ العينات",
+sampleShort:"أخذ العينات البيولوجية في المنزل.",
+postopTitle:"العناية بعد العمليات",
+postopShort:"المتابعة والرعاية بعد التدخل الجراحي.",
+hygieneTitle:"النظافة والراحة",
+hygieneShort:"العناية بالنظافة والمساعدة على الراحة في المنزل.",
+monitorTitle:"المراقبة",
+monitorShort:"مراقبة المؤشرات الحيوية والمتابعة التمريضية.",
+elderlyTitle:"رعاية المسنين",
+elderlyShort:"رعاية ومرافقة الأشخاص المسنين أو المحتاجين للمساعدة.",
+more:"المزيد من المعلومات",
+priceText:"الخدمات ابتداءً من",
+aboutTitle:"عن Rayane Infirmier",
+aboutText1:"رعاية تمريضية منزلية باحترافية واحترام واهتمام.",
+aboutText2:"هدفنا هو تمكينكم من الحصول على رعاية تمريضية جيدة في راحة منزلكم.",
+feature1:"🏠 في المنزل",
+feature2:"❤️ تعامل إنساني",
+feature3:"✓ احترافية",
+areaTitle:"منطقة التدخل",
+areaText:"خدمات منزلية في الدار البيضاء والمحمدية.",
+areaDetail:"اتصل بنا للتأكد من توفر الخدمة في منطقتكم.",
+contactTitle:"تحتاج إلى رعاية تمريضية منزلية؟",
+contactText:"متوفر 24 ساعة في اليوم و7 أيام في الأسبوع.",
+contactButton:"اتصل بنا",
+phoneComing:"رقم الهاتف وWhatsApp سيضافان قريبًا.",
+footer:"رعاية تمريضية منزلية · الدار البيضاء · المحمدية"
+},
+
+es:{
+navHome:"Inicio",
+navServices:"Servicios",
+navAbout:"Sobre nosotros",
+navContact:"Contacto",
+badge:"Cuidados de enfermería a domicilio",
+heroTitle:"Cuidados de enfermería directamente en su hogar",
+heroText:"Atención profesional, humana y cuidadosa en Casablanca y Mohammedia.",
+available:"Disponible 24/7",
+discover:"Descubrir servicios",
+appointment:"Reservar una cita",
+servicesTitle:"Nuestros servicios",
+servicesIntro:"Cuidados de enfermería a domicilio adaptados a sus necesidades.",
+injectionTitle:"Inyecciones",
+injectionShort:"Administración de tratamientos prescritos a domicilio.",
+perfusionTitle:"Perfusiones",
+perfusionShort:"Perfusiones y tratamientos según prescripción médica.",
+woundTitle:"Curaciones",
+woundShort:"Cuidado de heridas y cambio de apósitos.",
+sampleTitle:"Toma de muestras",
+sampleShort:"Toma de muestras biológicas a domicilio.",
+postopTitle:"Cuidados postoperatorios",
+postopShort:"Seguimiento y atención después de una intervención.",
+hygieneTitle:"Higiene y confort",
+hygieneShort:"Cuidados de higiene y ayuda para el confort en casa.",
+monitorTitle:"Supervisión",
+monitorShort:"Control de parámetros y seguimiento de enfermería.",
+elderlyTitle:"Cuidado de personas mayores",
+elderlyShort:"Atención y acompañamiento de personas mayores o dependientes.",
+more:"Más información",
+priceText:"Servicios desde",
+aboutTitle:"Sobre Rayane Infirmier",
+aboutText1:"Cuidados de enfermería a domicilio con profesionalidad, respeto y atención.",
+aboutText2:"Nuestro objetivo es ofrecer cuidados de calidad en la comodidad de su hogar.",
+feature1:"🏠 A domicilio",
+feature2:"❤️ Trato humano",
+feature3:"✓ Profesionalidad",
+areaTitle:"Zona de intervención",
+areaText:"Visitas a domicilio en Casablanca y Mohammedia.",
+areaDetail:"Contáctenos para comprobar la disponibilidad en su zona.",
+contactTitle:"¿Necesita cuidados a domicilio?",
+contactText:"Disponible 24/7 para sus necesidades de enfermería.",
+contactButton:"Contactarnos",
+phoneComing:"Número de teléfono y WhatsApp próximamente.",
+footer:"Cuidados de enfermería a domicilio · Casablanca · Mohammedia"
+}
+
+};
+
+
+const serviceDetails={
+
+injection:{
+fr:{
+title:"Injections",
+html:`
+<p>Les injections consistent à administrer un médicament ou un traitement par différentes voies, selon la prescription et la situation du patient.</p>
+<h3>Types d'injections</h3>
+<ul>
+<li>Intramusculaire (IM)</li>
+<li>Sous-cutanée (SC)</li>
+<li>Intradermique (ID)</li>
+<li>Intraveineuse (IV), selon le traitement et les conditions requises</li>
+</ul>
+<h3>Important</h3>
+<p>Les médicaments sont administrés conformément à la prescription médicale et aux règles de sécurité et d'hygiène.</p>`
+},
+en:{
+title:"Injections",
+html:`<p>Injections involve administering a medication or treatment through an appropriate route according to the medical prescription and patient's situation.</p><h3>Types</h3><ul><li>Intramuscular (IM)</li><li>Subcutaneous (SC)</li><li>Intradermal (ID)</li><li>Intravenous (IV), when appropriate</li></ul><h3>Important</h3><p>Medication is administered according to medical prescription and appropriate safety and hygiene procedures.</p>`
+},
+ar:{
+title:"الحقن",
+html:`<p>الحقن هو إعطاء دواء أو علاج عن طريق مسار مناسب حسب وصف الطبيب وحالة المريض.</p><h3>أنواع الحقن</h3><ul><li>الحقن العضلي (IM)</li><li>الحقن تحت الجلد (SC)</li><li>الحقن داخل الأدمة (ID)</li><li>الحقن الوريدي (IV) حسب العلاج والظروف المناسبة</li></ul><h3>مهم</h3><p>يتم إعطاء الأدوية وفق الوصفة الطبية وقواعد السلامة والنظافة.</p>`
+},
+es:{
+title:"Inyecciones",
+html:`<p>Las inyecciones consisten en administrar un medicamento o tratamiento por una vía adecuada según la prescripción médica y la situación del paciente.</p><h3>Tipos</h3><ul><li>Intramuscular (IM)</li><li>Subcutánea (SC)</li><li>Intradérmica (ID)</li><li>Intravenosa (IV), cuando corresponda</li></ul><h3>Importante</h3><p>Los medicamentos se administran según prescripción médica y las normas de seguridad e higiene.</p>`
+}
+},
+
+perfusion:{
+fr:{title:"Perfusions",html:`<p>La perfusion permet d'administrer une solution ou un traitement directement dans la circulation veineuse, lorsque cela est indiqué.</p><h3>Exemples</h3><ul><li>Sérum physiologique</li><li>Glucose</li><li>Certains médicaments prescrits</li><li>Antibiotiques selon prescription</li><li>Vitamines et autres traitements prescrits</li><li>Solutions de traitement adaptées à la prescription</li></ul><h3>Important</h3><p>La perfusion et les produits administrés doivent être prescrits et adaptés à l'état du patient.</p>`},
+en:{title:"IV Infusions",html:`<p>IV infusion allows a prescribed solution or treatment to be administered directly into the bloodstream when clinically indicated.</p><h3>Examples</h3><ul><li>Normal saline</li><li>Glucose solutions</li><li>Prescribed medications</li><li>Antibiotics when prescribed</li><li>Vitamins and other prescribed treatments</li></ul><h3>Important</h3><p>The infusion and administered products must be prescribed and appropriate for the patient's condition.</p>`},
+ar:{title:"التسريب الوريدي",html:`<p>التسريب الوريدي يسمح بإعطاء محلول أو علاج موصوف مباشرة إلى الدورة الدموية عندما يكون ذلك مناسبًا طبيًا.</p><h3>أمثلة</h3><ul><li>السيروم الفيزيولوجي</li><li>محاليل الغلوكوز</li><li>الأدوية الموصوفة</li><li>المضادات الحيوية حسب الوصفة</li><li>الفيتامينات والعلاجات الأخرى الموصوفة</li></ul><h3>مهم</h3><p>يجب أن يكون التسريب والمنتج المعطى موصوفًا ومناسبًا لحالة المريض.</p>`},
+es:{title:"Perfusiones",html:`<p>La perfusión intravenosa permite administrar una solución o tratamiento prescrito directamente al torrente sanguíneo cuando está indicado.</p><h3>Ejemplos</h3><ul><li>Suero fisiológico</li><li>Soluciones de glucosa</li><li>Medicamentos prescritos</li><li>Antibióticos según prescripción</li><li>Vitaminas y otros tratamientos prescritos</li></ul><h3>Importante</h3><p>La perfusión y los productos administrados deben estar prescritos y ser adecuados para el paciente.</p>`}
+},
+
+wound:{
+fr:{title:"Pansements",html:`<p>Le pansement consiste à protéger et prendre soin d'une plaie afin de favoriser sa cicatrisation et de limiter les risques de complication.</p><h3>Soins possibles</h3><ul><li>Évaluation de la plaie</li><li>Nettoyage et soins locaux</li><li>Renouvellement du pansement</li><li>Surveillance de l'évolution</li></ul>`},
+en:{title:"Wound Care",html:`<p>Wound care involves protecting and caring for a wound to support healing and reduce the risk of complications.</p><h3>Possible care</h3><ul><li>Wound assessment</li><li>Cleaning and local care</li><li>Dressing changes</li><li>Monitoring progress</li></ul>`},
+ar:{title:"العناية بالجروح",html:`<p>العناية بالجروح تهدف إلى حماية الجرح والعناية به للمساعدة على التئامه وتقليل خطر المضاعفات.</p><h3>الخدمات</h3><ul><li>تقييم الجرح</li><li>التنظيف والعناية الموضعية</li><li>تغيير الضمادات</li><li>مراقبة تطور الجرح</li></ul>`},
+es:{title:"Curación de heridas",html:`<p>El cuidado de heridas consiste en proteger y cuidar una herida para favorecer la cicatrización y reducir el riesgo de complicaciones.</p><h3>Cuidados</h3><ul><li>Evaluación de la herida</li><li>Limpieza y cuidado local</li><li>Cambio de apósitos</li><li>Seguimiento de la evolución</li></ul>`}
+},
+
+sample:{
+fr:{title:"Prélèvements",html:`<p>Un prélèvement consiste à recueillir un échantillon biologique afin qu'il puisse être analysé par un laboratoire.</p><h3>Exemples</h3><ul><li>Prélèvement sanguin</li><li>Prélèvements selon prescription et examens demandés</li></ul><h3>Objectif</h3><p>Le prélèvement doit être réalisé avec une technique adaptée, une identification correcte et des conditions d'hygiène appropriées.</p>`},
+en:{title:"Medical Sampling",html:`<p>Medical sampling involves collecting a biological specimen so it can be analyzed by a laboratory.</p><h3>Examples</h3><ul><li>Blood sampling</li><li>Other samples according to the requested examination</li></ul><h3>Purpose</h3><p>Samples should be collected using appropriate technique, identification and hygiene procedures.</p>`},
+ar:{title:"أخذ العينات",html:`<p>أخذ العينات هو جمع عينة بيولوجية من أجل تحليلها في المختبر.</p><h3>أمثلة</h3><ul><li>سحب الدم</li><li>عينات أخرى حسب الفحص المطلوب والوصفة</li></ul><h3>الهدف</h3><p>يجب أخذ العينة بطريقة مناسبة مع احترام قواعد التعريف والنظافة.</p>`},
+es:{title:"Toma de muestras",html:`<p>La toma de muestras consiste en recoger una muestra biológica para su análisis en un laboratorio.</p><h3>Ejemplos</h3><ul><li>Muestra de sangre</li><li>Otras muestras según el examen solicitado</li></ul><h3>Objetivo</h3><p>La muestra debe obtenerse mediante una técnica adecuada y respetando la identificación y la higiene.</p>`}
+},
+
+postop:{
+fr:{title:"Soins post-opératoires",html:`<p>Les soins post-opératoires accompagnent le patient après une intervention afin de surveiller son état et les suites de l'opération.</p><h3>Peuvent comprendre</h3><ul><li>Surveillance de l'état général</li><li>Soins de plaie et pansement</li><li>Surveillance des signes inhabituels</li><li>Conseils et accompagnement</li></ul>`},
+en:{title:"Post-operative Care",html:`<p>Post-operative care supports the patient after surgery and helps monitor recovery.</p><h3>May include</h3><ul><li>General monitoring</li><li>Wound and dressing care</li><li>Monitoring unusual signs</li><li>Support and guidance</li></ul>`},
+ar:{title:"العناية بعد العمليات",html:`<p>العناية بعد العمليات تهدف إلى متابعة المريض بعد التدخل الجراحي ومراقبة تطور حالته.</p><h3>يمكن أن تشمل</h3><ul><li>مراقبة الحالة العامة</li><li>العناية بالجرح والضمادات</li><li>مراقبة العلامات غير المعتادة</li><li>التوجيه والمرافقة</li></ul>`},
+es:{title:"Cuidados postoperatorios",html:`<p>Los cuidados postoperatorios acompañan al paciente después de una intervención y ayudan a controlar su recuperación.</p><h3>Pueden incluir</h3><ul><li>Supervisión general</li><li>Cuidado de heridas y apósitos</li><li>Control de signos inusuales</li><li>Orientación y acompañamiento</li></ul>`}
+},
+
+hygiene:{
+fr:{title:"Hygiène & confort",html:`<p>Les soins d'hygiène et de confort permettent d'accompagner les personnes qui ont besoin d'aide dans les soins quotidiens.</p><h3>Exemples</h3><ul><li>Toilette et soins d'hygiène</li><li>Aide au confort</li><li>Prévention des escarres</li><li>Accompagnement des personnes dépendantes</li></ul>`},
+en:{title:"Hygiene & Comfort",html:`<p>Hygiene and comfort care supports people who need assistance with daily personal care.</p><h3>Examples</h3><ul><li>Personal hygiene</li><li>Comfort assistance</li><li>Pressure sore prevention</li><li>Support for dependent patients</li></ul>`},
+ar:{title:"النظافة والراحة",html:`<p>تهدف خدمات النظافة والراحة إلى مساعدة الأشخاص الذين يحتاجون إلى المساعدة في العناية اليومية.</p><h3>أمثلة</h3><ul><li>العناية بالنظافة الشخصية</li><li>المساعدة على الراحة</li><li>الوقاية من تقرحات الفراش</li><li>مساعدة الأشخاص المحتاجين للرعاية</li></ul>`},
+es:{title:"Higiene y confort",html:`<p>Los cuidados de higiene y confort ayudan a las personas que necesitan asistencia en los cuidados diarios.</p><h3>Ejemplos</h3><ul><li>Higiene personal</li><li>Ayuda para el confort</li><li>Prevención de úlceras por presión</li><li>Apoyo a personas dependientes</li></ul>`}
+},
+
+monitor:{
+fr:{title:"Surveillance",html:`<p>La surveillance infirmière permet de suivre certains paramètres et l'évolution de l'état du patient.</p><h3>Selon les besoins</h3><ul><li>Température</li><li>Pression artérielle</li><li>Fréquence cardiaque</li><li>Saturation en oxygène</li><li>Observation de l'état général</li></ul>`},
+en:{title:"Monitoring",html:`<p>Nursing monitoring helps follow relevant parameters and changes in the patient's condition.</p><h3>Depending on needs</h3><ul><li>Temperature</li><li>Blood pressure</li><li>Heart rate</li><li>Oxygen saturation</li><li>General observation</li></ul>`},
+ar:{title:"المراقبة",html:`<p>المراقبة التمريضية تساعد على متابعة بعض المؤشرات وتطور حالة المريض.</p><h3>حسب الحاجة</h3><ul><li>درجة الحرارة</li><li>ضغط الدم</li><li>معدل ضربات القلب</li><li>نسبة الأكسجين</li><li>مراقبة الحالة العامة</li></ul>`},
+es:{title:"Supervisión",html:`<p>La supervisión de enfermería permite controlar determinados parámetros y la evolución del estado del paciente.</p><h3>Según las necesidades</h3><ul><li>Temperatura</li><li>Presión arterial</li><li>Frecuencia cardíaca</li><li>Saturación de oxígeno</li><li>Observación general</li></ul>`}
+},
+
+elderly:{
+fr:{title:"Soins aux personnes âgées",html:`<p>Un accompagnement adapté aux personnes âgées ou dépendantes, dans le respect de leur confort et de leur autonomie.</p><h3>Accompagnement</h3><ul><li>Soins infirmiers à domicile</li><li>Surveillance</li><li>Aide à l'hygiène et au confort</li><li>Accompagnement des proches</li></ul>`},
+en:{title:"Elderly Care",html:`<p>Appropriate support for elderly or dependent people while respecting comfort and independence.</p><h3>Support</h3><ul><li>Home nursing care</li><li>Monitoring</li><li>Hygiene and comfort assistance</li><li>Family support</li></ul>`},
+ar:{title:"رعاية المسنين",html:`<p>رعاية مناسبة للأشخاص المسنين أو المحتاجين للمساعدة مع احترام راحتهم واستقلاليتهم.</p><h3>المرافقة</h3><ul><li>الرعاية التمريضية المنزلية</li><li>المراقبة</li><li>المساعدة في النظافة والراحة</li><li>مرافقة الأسرة</li></ul>`},
+es:{title:"Cuidado de personas mayores",html:`<p>Atención adaptada a personas mayores o dependientes respetando su comodidad y autonomía.</p><h3>Atención</h3><ul><li>Cuidados de enfermería a domicilio</li><li>Supervisión</li><li>Ayuda con higiene y confort</li><li>Apoyo a familiares</li></ul>`}
+}
+
+};
+
+
+let currentLanguage="fr";
+
+function changeLanguage(lang){
+
+currentLanguage=lang;
+
+document.documentElement.lang=lang;
+
+document.documentElement.dir=(lang==="ar")?"rtl":"ltr";
+
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+const key=el.getAttribute("data-i18n");
+if(translations[lang][key]){
+el.textContent=translations[lang][key];
+}
+});
+
+document.querySelectorAll(".lang-btn").forEach(btn=>{
+btn.classList.remove("active");
+});
+
+document.querySelectorAll(".lang-btn").forEach(btn=>{
+if(
+(lang==="fr" && btn.textContent==="FR") ||
+(lang==="en" && btn.textContent==="EN") ||
+(lang==="ar" && btn.textContent==="العربية") ||
+(lang==="es" && btn.textContent==="ES")
+){
+btn.classList.add("active");
+}
+});
+
+}
+
+function openService(service){
+
+const data=serviceDetails[service][currentLanguage];
+
+document.getElementById("modalTitle").textContent=data.title;
+document.getElementById("modalContent").innerHTML=data.html;
+
+document.getElementById("serviceModal").classList.add("show");
+
+document.body.style.overflow="hidden";
+}
+
+function closeService(){
+
+document.getElementById("serviceModal").classList.remove("show");
+
+document.body.style.overflow="";
+}
+
+function closeOutside(event){
+
+if(event.target.id==="serviceModal"){
+closeService();
+}
+
+}
+
+document.addEventListener("keydown",function(event){
+
+if(event.key==="Escape"){
+closeService();
+}
+
+});
+
+</script>
 
 </body>
 </html>
